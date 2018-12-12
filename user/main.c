@@ -86,7 +86,8 @@ int main()
 	PTCP_Init(PTCP1);
 	LED_Off(LED1);
 	LED_On(LED2);
-	LED_Off(LED3); 
+	LED_Off(LED3);
+
 	RLY_OpenOff(RLY1);
 	RLY_OpenOff(RLY2);
 
