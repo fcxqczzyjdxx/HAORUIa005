@@ -98,9 +98,7 @@ int main()
 /*主循环*/
   while(1)
   {
-      
-   // sim800c_SendData("HRXXKJ",6);
-		//ADC_ConvertedToCurrent
+
 		#if(1)
     dataGather();
 		#endif
