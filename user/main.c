@@ -61,39 +61,39 @@ void dataGather(void);
 *******************************************************************************/
 int main()
 {
-  static _Bool cnfMode=0;
-  unsigned short timeCount = 0;	//发送间隔变量
-  
-  u8 i=0;
-  c8 disconnect[]={0x0e,0x00};  //断开连接
-  delay_init();
-  delay_ms(1000);
-  TIM3_Init();
-  UART_Init(COM1 ,115200);
-  UART_Init(COM3 ,115200); //SIM800C
-  /*设置NVIC中断分组2:2位抢占优先级，2位响应优先级*/
-  NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); 
-  
-  LED_Init(LED1);
-  LED_Init(LED2);
-  LED_Init(LED3);
-  
-  RLY_Init(RLY1);
+	static _Bool cnfMode=0;
+	unsigned short timeCount = 0;	//发送间隔变量
+
+	u8 i=0;
+	c8 disconnect[]={0x0e,0x00};  //断开连接
+	delay_init();
+	delay_ms(1000);
+	TIM3_Init();
+	UART_Init(COM1 ,115200);
+	UART_Init(COM3 ,115200); //SIM800C
+	/*设置NVIC中断分组2:2位抢占优先级，2位响应优先级*/
+	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); 
+
+	LED_Init(LED1);
+	LED_Init(LED2);
+	LED_Init(LED3);
+
+	RLY_Init(RLY1);
 	RLY_Init(RLY2);
 	RLY_Init(RLY3);
 	RLY_Init(RLY4);
 
-  PTCP_Init(PTCP1);
-  LED_Off(LED1);
-  LED_On(LED2);
-  LED_Off(LED3); 
-  RLY_OpenOff(RLY1);
-  RLY_OpenOff(RLY2);
-  
-  AD_DMA_Init();
-  CNF_Init();
-//  sim800c_Init();
-    
+	PTCP_Init(PTCP1);
+	LED_Off(LED1);
+	LED_On(LED2);
+	LED_Off(LED3); 
+	RLY_OpenOff(RLY1);
+	RLY_OpenOff(RLY2);
+
+	AD_DMA_Init();
+	CNF_Init();
+	//  sim800c_Init();
+		
 /*主循环*/
   while(1)
   {
