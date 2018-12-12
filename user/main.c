@@ -94,7 +94,7 @@ int main()
   CNF_Init();
 //  sim800c_Init();
     
-/*主循环  */
+/*主循环*/
   while(1)
   {
       
@@ -366,7 +366,7 @@ void dataGather(void)
 			break;
 		case DATA_GATHER_EDN:
 			
-			if (amongSoData[strlen(amongSoData) - 1] == ',')
+			if (amongSoData[strlen(amongSoData) - 1] == ',')  //最后一个字符是 ',' 删除改成 '\0'
 				amongSoData[strlen(amongSoData) - 1]  = '\0';
 			sprintf(data,"}");
 		  strcat(amongSoData, data);
