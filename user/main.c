@@ -94,7 +94,7 @@ int main()
   CNF_Init();
 //  sim800c_Init();
     
-/*主循环*/
+/*主循环  */
   while(1)
   {
       
